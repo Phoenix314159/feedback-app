@@ -11,15 +11,9 @@ require('./models/user'); // has to be required first so passport can access use
 require('./services/passport');
 require('./routes/auth')(app);
 require('./routes/home')(app);
+require('./routes/getAlbums')(app);
 
-const fetchAlbums = async () => {
-    const res = await axios({
-        method: 'get',
-        url: 'https://rallycoding.herokuapp.com/api/music_albums'
-    })
-    console.log(res.data);
-}
-fetchAlbums();
+
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
