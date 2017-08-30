@@ -30,6 +30,7 @@ passport.use(new googleStrategy({
         name: profile.name.givenName,
         emailAddress: profile.emails[0].value
     }).save();
+
     done(null, user);
 
 }));

@@ -1,3 +1,7 @@
-/**
- * Created by PhantomPhoenix on 8/27/2017.
- */
+import React from 'react';
+
+const Header = () => {
+
+}
+
+export default Header;

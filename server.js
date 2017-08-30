@@ -1,6 +1,5 @@
 const config = require('./config/config'),
     express = require('express'),
-    axios = require('axios'),
     mongoose = require('mongoose'),
     app = express();
 
@@ -12,8 +11,6 @@ require('./services/passport');
 require('./routes/auth')(app);
 require('./routes/home')(app);
 require('./routes/getAlbums')(app);
-
-
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
