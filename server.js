@@ -10,11 +10,9 @@ require('./services/passport');
 require('./services/middleware')(app);
 require('./routes/auth')(app);
 
-app.use(express.static(__dirname + '/client/build'));
+process.env.PWD = process.cwd();
+app.use('/', express.static(process.env.PWD + '/client/build'));
 
-app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/client/build/index.html');
-})
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
