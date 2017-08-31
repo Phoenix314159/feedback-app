@@ -5,12 +5,16 @@ const config = require('./config/config'),
 
 mongoose.connect(config.db);
 
-require('./services/middleware')(app);
-require('./models/user'); // has to be required first so passport can access users model
+require('./models/user');
 require('./services/passport');
+require('./services/middleware')(app);
 require('./routes/auth')(app);
-require('./routes/home')(app);
-require('./routes/getAlbums')(app);
+
+app.use(express.static(__dirname + '/client/build'));
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/client/build/index.html');
+})
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
