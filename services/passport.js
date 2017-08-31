@@ -4,15 +4,13 @@ const passport = require('passport'),
     mongoose = require('mongoose'),
     User = mongoose.model('users');
 
-
 passport.serializeUser((user, done) => {
     done(null, user.id); // id assigned to user by mongo
 });
 
-passport.deserializeUser((id, done) => {
-    User.findById(id).then(user => {
-        done(null, user);
-    })
+passport.deserializeUser(async (id, done) => {
+    let user = await User.findById(id);
+    done(null, user);
 })
 
 passport.use(new googleStrategy({
@@ -20,19 +18,18 @@ passport.use(new googleStrategy({
     clientSecret: config.googleClientSecret,
     callbackURL: '/auth/google/callback',
     proxy: true
-}, (accessToken, refreshToken, profile, done) => {
-    User.findOne({
-        googleId: profile.id
-    }).then(existingUser => {
-        if (existingUser) {
-            return done(null, existingUser);
-        }
-        new User({
-            googleId: profile.id,
-            name: profile.name.givenName,
-            emailAddress: profile.emails[0].value
-        }).save().then(user => done(null, user));
-    })
+}, async (accessToken, refreshToken, profile, done) => {
+    let existingUser = await User.findOne({ googleId: profile.id })
+    if (existingUser) {
+        return done(null, existingUser);
+    }
+    let user = new User({
+        googleId: profile.id,
+        name: profile.name.givenName,
+        emailAddress: profile.emails[0].value
+    }).save()
+
+    done(null, user)
 }));
 
 

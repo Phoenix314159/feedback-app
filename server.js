@@ -9,6 +9,7 @@ require('./models/user');
 require('./services/passport');
 require('./services/middleware')(app);
 require('./routes/auth')(app);
+require('./routes/getAlbums')(app);
 
 //<----------- production --------------->
 // process.env.PWD = process.cwd();
