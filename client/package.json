@@ -4,25 +4,21 @@
   "private": true,
   "proxy": {
     "/api/login": {
-      "target": "http://localhost:3072"
+      "target": "http://localhost:3089"
     },
-    "/api/logout": {
-      "target": "http://localhost:3072"
-    },
-    "/api/current_user": {
-      "target": "http://localhost:3072"
-    },
-    "/api/albums": {
-      "target": "http://localhost:3072"
+    "/api/*": {
+      "target": "http://localhost:3089"
     }
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "materialize-css": "^0.100.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.11"
