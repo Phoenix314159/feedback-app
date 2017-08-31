@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Albums extends Component {
     constructor(props) {
         super(props)
     }
 
-    componentWillReceiveProps(props) {
-        this.albumDetails = props.info.map((album, i) => {
+     componentWillReceiveProps(props) {
+         this.albumDetails = props.albums.map((album, i) => {
             return (
-                <div>
-                    <img src={album.thumbnail_image}/>
-                    <ul key={i}>
+                <div key={i}>
+                    <ul >
                         <li>Album Name: {album.title}
                             Album Artist: {album.artist}
-                            Album Image: <img src={album.image}/>
+                            Album Image: <img src={album.image} alt="" />
                         </li>
                     </ul>
                 </div>
@@ -30,4 +30,7 @@ class Albums extends Component {
     }
 }
 
-export default Albums;
+function mapStateToProps({ albums }) {
+    return { albums }
+}
+export default connect(mapStateToProps)(Albums)

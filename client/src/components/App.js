@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import Header from'./Header';
+import Header from './Header';
+import Landing from './Landing';
+ import Albums from './Albums';
 
 const Dashboard = () => <h2>Dashboard</h2>
 const SurveyNew = () => <h2>SurveyNew</h2>
-const Landing = () => <h2>Landing</h2>
+
 
 class App extends Component {
     constructor(props) {
@@ -15,6 +17,7 @@ class App extends Component {
 
     componentDidMount() {
         this.props.fetchUser();
+        this.props.fetchAlbums();
     }
 
     render() {
@@ -26,6 +29,7 @@ class App extends Component {
                         <Route exact path="/" component={Landing}/>
                         <Route exact path="/surveys" component={Dashboard}/>
                         <Route path="/surveys/new" component={SurveyNew}/>
+                        <Route exact path="/albums" component={Albums}/>
                     </div>
                 </BrowserRouter>
             </div>
