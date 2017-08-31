@@ -10,9 +10,10 @@ require('./services/passport');
 require('./services/middleware')(app);
 require('./routes/auth')(app);
 
-process.env.PWD = process.cwd();
-app.use('/', express.static(process.env.PWD + '/client/build'));
-
+//<----------- production --------------->
+// process.env.PWD = process.cwd();
+// app.use('/', express.static(process.env.PWD + '/client/build'));
+//<-------------------------------------->
 
 app.listen(config.port, () => {
     console.log(`listening on port ${config.port}`)
