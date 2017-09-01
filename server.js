@@ -3,7 +3,7 @@ const config = require('./config/config'),
     mongoose = require('mongoose'),
     app = express();
 
-mongoose.connect(config.db);
+mongoose.connect(config.mongoURI);
 
 require('./models/user');
 require('./services/passport');
@@ -12,8 +12,8 @@ require('./routes/auth')(app);
 require('./routes/getAlbums')(app);
 
 //<----------- production --------------->
-process.env.PWD = process.cwd();
-app.use('/', express.static(process.env.PWD + '/client/build'));
+// process.env.PWD = process.cwd();
+// app.use('/', express.static(process.env.PWD + '/client/build'));
 //<-------------------------------------->
 
 app.listen(config.port, () => {
