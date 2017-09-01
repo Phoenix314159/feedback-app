@@ -9,6 +9,14 @@ export const fetchUser = () => async dispatch => {
     })
 }
 
+export const handleToken = token => async dispatch => {
+    let res = await axios.post('/api/stripe', token);
+    dispatch({
+        type: types.FETCH_USER,
+        payload: res.data
+    })
+}
+
 export const fetchAlbums = () => async dispatch => {
     let res = await axios.get('/api/albums');
     dispatch({

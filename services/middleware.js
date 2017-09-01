@@ -4,6 +4,7 @@ const cookieSession = require('cookie-session'),
     bodyParser = require('body-parser');
 
 module.exports = app => {
+    app.use(bodyParser.json());
     app.use(
         cookieSession({
             maxAge: config.cookieAge,
@@ -12,6 +13,5 @@ module.exports = app => {
     );
     app.use(passport.initialize());
     app.use(passport.session());
-    app.use(bodyParser.json());
 }
 
