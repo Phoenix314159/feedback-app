@@ -14,7 +14,6 @@ require('./routes/billingRoutes')(app);
 require('./routes/getAlbums')(app);
 
 // app.use(express.static(__dirname + '/client/build'));
-
 //<----------- production --------------->
 process.env.PWD = process.cwd();
 app.use('/', express.static(process.env.PWD + '/client/build'));
