@@ -13,7 +13,6 @@ require('./routes/auth')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/getAlbums')(app);
 
-
 //<----------- production --------------->
 process.env.PWD = process.cwd();
 app.use('/', express.static(process.env.PWD + '/client/build'));
