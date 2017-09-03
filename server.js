@@ -1,6 +1,7 @@
 const config = require('./config/config'),
     express = require('express'),
     mongoose = require('mongoose'),
+    port = process.env.PORT || 3367;
     app = express();
 
 mongoose.connect(config.mongoURI);
@@ -17,6 +18,6 @@ process.env.PWD = process.cwd();
 app.use('/', express.static(process.env.PWD + 'client/build'));
 //<-------------------------------------->
 
-app.listen(config.port, () => {
-    console.log(`listening on port ${config.port}`)
+app.listen(port, () => {
+    console.log(`listening on port ${port}`)
 });
