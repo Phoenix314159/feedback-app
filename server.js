@@ -7,7 +7,7 @@ mongoose.connect(config.mongoURI);
 
 require('./models/user');
 require('./services/passport');
-require('./services/middleware')(app);
+require('./middleware/middleware')(app);
 require('./routes/auth')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/getAlbums')(app);
