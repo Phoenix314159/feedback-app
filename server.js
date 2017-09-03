@@ -14,7 +14,7 @@ require('./routes/getAlbums')(app);
 
 //<----------- production --------------->
 process.env.PWD = process.cwd();
-app.use('/', express.static(process.env.PWD + '/client/build'));
+app.use('/', express.static(process.env.PWD + '/build'));
 //<-------------------------------------->
 
 app.listen(config.port, () => {
