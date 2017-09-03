@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './Payments';
-// import styles from '../styles/sass/header.scss';
+
 class Header extends Component {
 
    renderContent() {
@@ -24,9 +24,9 @@ class Header extends Component {
     render() {
         return (
             <nav>
-                <div className="nav-wrapper">
+                <div className="nav-wrapper green border">
                     <Link to={this.props.auth ? '/surveys' : '/'}
-                          className="left brand-logo">Emaily</Link>
+                          className="left brand-logo"><i className="fa fa-envelope fa-2x"></i></Link>
                     <ul className="right">
                         {this.renderContent()}
                     </ul>
