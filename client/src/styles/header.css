@@ -4,3 +4,7 @@
 .fa-envelope {
   margin-left: 1.8vw;
   margin-top: -0.8vh; }
+
+.header {
+  position: relative;
+  top: 1.5vh; }

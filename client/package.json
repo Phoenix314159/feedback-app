@@ -4,10 +4,10 @@
   "private": true,
   "proxy": {
     "/auth/google": {
-      "target": "http://localhost:3065"
+      "target": "http://localhost:3367"
     },
     "/api/*": {
-      "target": "http://localhost:3065"
+      "target": "http://localhost:3367"
     }
   },
   "dependencies": {

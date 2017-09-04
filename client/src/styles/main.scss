@@ -3,13 +3,15 @@ $textColor: blue;
 
 .main {
   background-image: url('../imgs/pexels-photo-325139.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
   background-size: cover;
   height: 100vh;
 }
 .text {
   color: $textColor;
 }
-.border {
-  border: $border;
-}
+
 

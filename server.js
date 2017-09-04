@@ -14,11 +14,11 @@ require('./routes/billingRoutes')(app);
 require('./routes/getAlbums')(app);
 
 //<----------- production --------------->
-process.env.PWD = process.cwd();
-app.use(express.static(process.env.PWD + '/client/build'));
-app.get('*', (req, res) => {
-    res.sendFile(process.env.PWD  + '/client/build/index.html');
-})
+// process.env.PWD = process.cwd();
+// app.use(express.static(process.env.PWD + '/client/build'));
+// app.get('*', (req, res) => {
+//     res.sendFile(process.env.PWD  + '/client/build/index.html');
+// })
 //<-------------------------------------->
 
 app.listen(port, () => {
