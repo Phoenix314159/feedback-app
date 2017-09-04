@@ -11,9 +11,9 @@ require('./models/user');
 require('./models/survey');
 require('./services/passport');
 require('./middleware/middleware')(app);
-require('./routes/auth')(app);
+require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
-require('./routes/surveys')(app);
+require('./routes/surveyRoutes')(app);
 require('./routes/getAlbums')(app);
 
 //<---------- production ----------->
