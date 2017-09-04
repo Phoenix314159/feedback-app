@@ -8,10 +8,12 @@ const config = require('./config/config'),
 mongoose.connect(config.mongoURI);
 
 require('./models/user');
+require('./models/survey');
 require('./services/passport');
 require('./middleware/middleware')(app);
 require('./routes/auth')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveys')(app);
 require('./routes/getAlbums')(app);
 
 //<---------- production ----------->

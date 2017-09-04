@@ -9,6 +9,20 @@
   position: relative;
   top: 1.5vh; }
 
+.rightNav {
+  position: relative;
+  top: -5px; }
+
+.albums {
+  float: left; }
+
+.picture {
+  height: 50%;
+  width: 50%; }
+
+* {
+  font-family: 'Oswald', sans-serif; }
+
 .main {
   background-image: url("../imgs/pexels-photo-325139.jpeg");
   background-attachment: fixed;
