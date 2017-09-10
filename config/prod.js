@@ -7,5 +7,6 @@ module.exports = {
     cookieAge: 2592000000,
     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
-    redirectUrl: `https://feedback-app12.herokuapp.com/`
+    redirectUrl: `https://feedback-app12.herokuapp.com/`,
+    sendGridKey: process.env.SEND_GRID_KEY
 }
