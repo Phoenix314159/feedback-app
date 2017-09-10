@@ -19,7 +19,7 @@ class Header extends Component {
                     <li key="2" style={{margin: '0 10px'}}  >
                         <h3 className="rightNav">Credits: {this.props.auth.credits}</h3>
                     </li>,
-                    <li key="3" ><a href="/api/logout"><h3 className="rightNav">Logout</h3></a></li>
+                    <li key="3"><a href="/api/logout"><h3 className="rightNav">Logout</h3></a></li>
                 ]
         }
     }

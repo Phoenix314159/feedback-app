@@ -2,7 +2,6 @@ const config = require('./config/config'),
     express = require('express'),
     mongoose = require('mongoose'),
     path = require('path'),
-    port = process.env.PORT || 3367,
     app = express();
 
 mongoose.connect(config.mongoURI);
@@ -26,6 +25,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 //<--------------------------------->
 
-app.listen(port, () => {
-    console.log(`listening on port ${port}`)
+app.listen(config.port, () => {
+    console.log(`listening on port ${config.port}`)
 });
