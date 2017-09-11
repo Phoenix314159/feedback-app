@@ -13,5 +13,5 @@ module.exports = survey => {
           </div>
         </body>
       </html>
-    `;
+    `
 }

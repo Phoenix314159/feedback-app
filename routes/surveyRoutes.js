@@ -2,7 +2,7 @@ const mongoose = require('mongoose'),
     requireLogin = require('../middleware/requireLogin'),
     requireCredits = require('../middleware/requireCredits'),
     Survey = mongoose.model('surveys'),
-    Mailer = require('../services/mailer'),
+    Mailer = require('../services/Mailer'),
     surveyTemplate = require('../services/emailTemplates/surveyTemplate');
 
 module.exports = app => {
@@ -21,9 +21,10 @@ module.exports = app => {
                 _user: req.user.id,
                 dateSent: Date.now()
             });
+        console.log('userID: ', req.user.id);
         const mailer = new Mailer(survey, surveyTemplate(survey));
         mailer.send();
-
+        console.log(mailer.send())
     })
 
     app.post('/api/surveys/webhooks', (req, res) => {
