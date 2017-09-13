@@ -1,8 +1,7 @@
 const config = require('./config/config'),
-    express = require('express'),
+    app = require('express')(),
     mongoose = require('mongoose'),
-    path = require('path'),
-    app = express();
+    path = require('path');
 
 mongoose.connect(config.mongoURI);
 
