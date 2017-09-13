@@ -1,8 +1,4 @@
-let config = require('../../config/config'),
-    emailRedirectUrl = `${config.devUrl}${config.clientPort}`;
-if (process.env.NODE_ENV === 'production') {
-    emailRedirectUrl = config.redirectUrl;
-}
+const config = require('../../config/config');
 
 module.exports = survey => {
     return `
@@ -10,11 +6,11 @@ module.exports = survey => {
         <body>
           <div style="text-align: center">
             <h3>I'd like your input!</h3>
-            <p>Please answer the following question</p>
+            <p>Please answer the following question:</p>
             <p>${survey.body}</p>
             <div>
-               <a href=${emailRedirectUrl}>Yes</a>
-               <a href=${emailRedirectUrl}>No</a>
+               <a href="${config.redirectUrl}/api/survey/thanks">Yes</a>
+               <a href="${config.redirectUrl}/api/survey/thanks">No</a>
             </div>
           </div>
         </body>
