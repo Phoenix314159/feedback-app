@@ -1,8 +1,6 @@
-const config = require('../../config/config');
-
-let emailRedirectUrl = `http://localhost:${config.clientPort}`
-
-if(process.env.NODE_ENV === 'production'){
+let config = require('../../config/config'),
+    emailRedirectUrl = `${config.devUrl}${config.clientPort}`;
+if (process.env.NODE_ENV === 'production') {
     emailRedirectUrl = config.redirectUrl;
 }
 

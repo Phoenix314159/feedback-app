@@ -21,10 +21,8 @@ module.exports = app => {
                 _user: req.user.id,
                 dateSent: Date.now()
             });
-        console.log('userID: ', req.user.id);
         const mailer = new Mailer(survey, surveyTemplate(survey));
         mailer.send();
-        console.log(mailer.send())
     })
 
     app.post('/api/surveys/webhooks', (req, res) => {

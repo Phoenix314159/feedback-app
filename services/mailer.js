@@ -5,12 +5,10 @@ const sendgrid = require('sendgrid'),
 class Mailer extends helper.Mail {
     constructor({subject, recipients}, content) {
         super();
-
         this.sgApi = sendgrid(config.sendGridKey);
         this.from_email = new helper.Email('no-reply@feedbackapp.com');
         this.subject = subject;
         this.body = new helper.Content('text/html', content);
-
         this.recipients = this.formatAddresses(recipients);
         this.addContent(this.body);
         this.addClickTracking();
@@ -44,15 +42,11 @@ class Mailer extends helper.Mail {
             method: 'POST',
             path: '/v3/mail/send',
             body: this.toJSON()
-        });
-        const response = this.sgApi.API(request, (error, res) => {
+        }),
+        response = await this.sgApi.API(request, (error, res) => {
             if (error) {
                 console.log("Error response received");
             }
-            console.log(res)
-            console.log('status code: ', res.statusCode);
-            console.log('body: ', res.body);
-            console.log('headers: ', res.headers);
         });
         return response;
     }
