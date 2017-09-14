@@ -3,12 +3,13 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import SurveyField from '../components/SurveyField';
 import _ from 'lodash';
+import validateEmails from '../utilities/validateEmails';
 
 const FIELDS = [
     {label: 'Survey Title', name: 'title', noValueError: 'Please provide a survey title.'},
     {label: 'Subject Line', name: 'subject', noValueError: 'Please provide a survey subject.'},
     {label: 'Email Body', name: 'body', noValueError: 'Please provide an email body.'},
-    {label: 'Recipient List', name: 'emails', noValueError: 'Please provide a survey title.'}
+    {label: 'Recipient List', name: 'emails'}
 ]
 
 class SurveyForm extends Component {
@@ -43,11 +44,13 @@ class SurveyForm extends Component {
 function validate(values) {
     const errors = {};
 
+    errors.emails = validateEmails(values.emails || '');
+
     _.each(FIELDS, ({ name, noValueError }) => {
         if(!values[name]) {
            errors[name] = noValueError;
         }
-    })
+    });
 
     return errors;
 }

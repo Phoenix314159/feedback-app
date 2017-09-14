@@ -3,7 +3,7 @@
   background-color: whitesmoke;
   border: 2px solid black;
   border-radius: 7pt;
-  height: 48vh;
+  height: 54vh;
   max-height: 65vh; }
   .surveyFormBackGround .buttons {
     margin-bottom: 5vh; }
@@ -17,4 +17,4 @@
   color: black; }
 
 .formPadding {
-  padding: 2%; }
+  padding: 4%; }
