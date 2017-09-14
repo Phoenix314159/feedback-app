@@ -6,6 +6,11 @@ $font: 1.2em;
   border: 2px solid black;
   border-radius: 7pt;
   height: 48vh;
+  max-height: 65vh;
+
+  .buttons {
+    margin-bottom: 5vh;
+  }
 }
 
 .surveyField {
@@ -17,8 +22,8 @@ $font: 1.2em;
     font-size: $font;
     color: black;
   }
-
 }
+
 .formPadding {
   padding: 2%;
 }
