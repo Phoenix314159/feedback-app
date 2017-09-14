@@ -1,10 +1,12 @@
 @import './header.scss';
 @import './albums.scss';
+@import './SurveyForm.scss';
 $textColor: blue;
 
 * {
   font-family: 'Oswald', sans-serif;;
 }
+
 .main {
   background-image: url('../../imgs/pexels-photo-325139.jpeg');
   background-attachment: fixed;
