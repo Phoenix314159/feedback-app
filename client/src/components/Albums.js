@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class Albums extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentWillReceiveProps(props) {
         this.albumDetails = props.albums.map((album, i) => {

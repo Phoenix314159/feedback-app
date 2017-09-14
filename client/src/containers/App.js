@@ -1,21 +1,16 @@
+import '../styles/css/main.css';
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
-import '../styles/css/main.css';
-
-import Landing from './Landing';
-import Albums from './Albums';
-
-const Dashboard = () => <h2>Dashboard</h2>
-const SurveyNew = () => <h2>SurveyNew</h2>
+import Landing from '../components/Landing';
+import Albums from '../components/Albums';
+import Dashboard from '../components/Dashboard';
+import SurveyNew from './SurveyNew';
 
 
 class App extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.props.fetchUser();
