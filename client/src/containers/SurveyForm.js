@@ -30,7 +30,6 @@ class SurveyForm extends Component {
                         <Link to="/surveys" className="red btn-flat left white-text">
                             Cancel
                         </Link>
-
                         <button className="teal btn-flat right white-text" type="submit">Next
                             <i className="material-icons right">arrow_forward</i>
                         </button>
@@ -55,5 +54,6 @@ const validate = values => {
 
 export default reduxForm({
     validate,
-    form: 'surveyForm'
+    form: 'surveyForm',
+    destroyOnUnmount: false
 })(SurveyForm);

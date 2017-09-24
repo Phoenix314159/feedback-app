@@ -41,6 +41,9 @@
 .formPadding {
   padding: 4%; }
 
+.formReview {
+  margin-top: 20px; }
+
 * {
   font-family: 'Oswald', sans-serif; }
 
