@@ -6,6 +6,7 @@ import Payments from './Payments';
 class Header extends Component {
 
     renderContent() {
+        console.log(this.props)
         switch (this.props.auth) {
             case null:
                 return;
@@ -40,7 +41,7 @@ class Header extends Component {
 }
 
 
-function mapStateToProps({auth}) {
+const mapStateToProps = ({auth}) => {
     return {auth}
 }
 export default connect(mapStateToProps)(Header)

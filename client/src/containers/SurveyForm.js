@@ -24,7 +24,7 @@ class SurveyForm extends Component {
     render() {
         return (
             <div className="surveyFormBackGround">
-                <form onSubmit={this.props.handleSubmit(values => console.log(values))} className="formPadding">
+                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)} className="formPadding">
                     {this.renderFields()}
                     <div className="buttons">
                         <Link to="/surveys" className="red btn-flat left white-text">
@@ -41,11 +41,9 @@ class SurveyForm extends Component {
     }
 }
 
-function validate(values) {
+const validate = values => {
     const errors = {};
-
     errors.emails = validateEmails(values.emails || '');
-
     _.each(FIELDS, ({ name, noValueError }) => {
         if(!values[name]) {
            errors[name] = noValueError;

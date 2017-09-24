@@ -26,7 +26,8 @@ class Albums extends Component {
     }
 }
 
-function mapStateToProps({albums}) {
+const mapStateToProps= ({albums}) => {
     return {albums}
 }
+
 export default connect(mapStateToProps)(Albums)

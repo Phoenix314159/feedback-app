@@ -15,6 +15,7 @@ class App extends Component {
     componentDidMount() {
         this.props.fetchUser();
         this.props.fetchAlbums();
+        console.log(this.props.fetchUser())
     }
 
     render() {
