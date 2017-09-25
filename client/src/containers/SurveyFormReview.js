@@ -9,16 +9,17 @@ const SurveyFormReview = ({onCancel, formValues}) => {
             <div className="text-center" key={name}>
                 <label>{label}</label>
                 <br/>
-                <div>
+                <div className="values">
                     {formValues[name]}
                 </div>
+                <hr/>
             </div>
         )
     })
     return (
         <div className="container formReview">
             <h3 className="text-center">Please Confirm Your Entries</h3>
-
+            <hr/>
             <span>{reviewFields}</span>
             <div className="flexButtons">
                 <button

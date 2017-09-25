@@ -1,19 +1,39 @@
+$border: 2px solid black;
+$radius: 7pt;
+$bottom: 5px;
+
 .formReview {
   margin-top: 50px;
   width: 25vw;
   max-width: 55vw;
   background-color: whitesmoke;
-  border: 2px solid black;
-  border-radius: 7pt;
-  height: 40vh;
+  border: $border;
+  border-radius: $radius;
+  max-height: 100vh;
   label {
     font-size: 1.5em;
   }
   button {
     margin-top: 5vh;
+    margin-bottom: 2vh;
+  }
+  hr {
+    border-width: 3px;
+    color: black;
+  }
+  .values {
+    font-size: 1.3em;
+    overflow-wrap: break-word;
   }
 }
 .flexButtons {
   display: flex;
   justify-content: space-around;
+}
+.emailTextArea1 {
+  marginBottom: $bottom;
+}
+.emailTextArea2 {
+  marginBottom: $bottom;
+  border: 1px solid red;
 }

@@ -5,11 +5,15 @@ import SurveyField from '../components/SurveyField';
 import _ from 'lodash';
 import validateEmails from '../utilities/validateEmails';
 import formFields from './formFields';
+import EmailBodyField from '../components/EmailBodyField';
 
 class SurveyForm extends Component {
 
     renderFields() {
         return _.map(formFields, ({label, name}) => {
+            if(label === 'Email Body'){
+                return <Field key={name} component={EmailBodyField} type="text" label={label} name={name}/>
+            }
             return <Field key={name} component={SurveyField} type="text" label={label} name={name}/>
 
         })

@@ -5,12 +5,26 @@
   background-color: whitesmoke;
   border: 2px solid black;
   border-radius: 7pt;
-  height: 40vh; }
+  max-height: 100vh; }
   .formReview label {
     font-size: 1.5em; }
   .formReview button {
-    margin-top: 5vh; }
+    margin-top: 5vh;
+    margin-bottom: 2vh; }
+  .formReview hr {
+    border-width: 3px;
+    color: black; }
+  .formReview .values {
+    font-size: 1.3em;
+    overflow-wrap: break-word; }
 
 .flexButtons {
   display: flex;
   justify-content: space-around; }
+
+.emailTextArea1 {
+  marginBottom: 5px; }
+
+.emailTextArea2 {
+  marginBottom: 5px;
+  border: 1px solid red; }
