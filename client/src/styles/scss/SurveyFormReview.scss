@@ -1,3 +1,19 @@
 .formReview {
-  margin-top: 20px;
+  margin-top: 50px;
+  width: 25vw;
+  max-width: 55vw;
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 7pt;
+  height: 40vh;
+  label {
+    font-size: 1.5em;
+  }
+  button {
+    margin-top: 5vh;
+  }
+}
+.flexButtons {
+  display: flex;
+  justify-content: space-around;
 }
