@@ -4,18 +4,12 @@ import {Link} from 'react-router-dom';
 import SurveyField from '../components/SurveyField';
 import _ from 'lodash';
 import validateEmails from '../utilities/validateEmails';
-
-const FIELDS = [
-    {label: 'Survey Title', name: 'title', noValueError: 'Please provide a survey title.'},
-    {label: 'Subject Line', name: 'subject', noValueError: 'Please provide a survey subject.'},
-    {label: 'Email Body', name: 'body', noValueError: 'Please provide an email body.'},
-    {label: 'Recipient List', name: 'emails'}
-]
+import formFields from './formFields';
 
 class SurveyForm extends Component {
 
     renderFields() {
-        return _.map(FIELDS, ({label, name}) => {
+        return _.map(formFields, ({label, name}) => {
             return <Field key={name} component={SurveyField} type="text" label={label} name={name}/>
 
         })
@@ -43,7 +37,7 @@ class SurveyForm extends Component {
 const validate = values => {
     const errors = {};
     errors.emails = validateEmails(values.emails || '');
-    _.each(FIELDS, ({ name, noValueError }) => {
+    _.each(formFields, ({ name, noValueError }) => {
         if(!values[name]) {
            errors[name] = noValueError;
         }

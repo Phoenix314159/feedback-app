@@ -1,9 +1,23 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import formFields from './formFields';
+import _ from 'lodash';
 
-const SurveyFormReview = ({onCancel}) => {
+const SurveyFormReview = ({onCancel, formValues}) => {
+    const reviewFields = _.map(formFields, ({name, label}) => {
+        return (
+            <div key={name}>
+                <label>{label}</label>
+                <div>
+                    {formValues[name]}
+                </div>
+            </div>
+        )
+    })
     return (
         <div className="container formReview">
             <h5>Please Confirm your entries</h5>
+            {reviewFields}
             <button
                 className="yellow darken-3 btn-flat"
                 onClick={onCancel}
@@ -13,5 +27,8 @@ const SurveyFormReview = ({onCancel}) => {
         </div>
     )
 }
+const mapStateToProps = state => {
+    return {formValues: state.form.surveyForm.values};
+}
 
-export default SurveyFormReview;
+export default connect(mapStateToProps)(SurveyFormReview);
