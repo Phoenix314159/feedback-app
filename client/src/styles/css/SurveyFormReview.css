@@ -24,10 +24,20 @@
 
 .emailTextArea1 {
   marginBottom: 5px; }
+  .emailTextArea1:focus {
+    background-color: white; }
 
 .emailTextArea2 {
   marginBottom: 5px;
   border: 1px solid red; }
+  .emailTextArea2:focus {
+    background-color: white; }
 
 .yellowArrow {
   width: 1vw; }
+
+.surveyInputs1:focus {
+  background-color: white; }
+
+.surveyInputs2:focus {
+  background-color: white; }

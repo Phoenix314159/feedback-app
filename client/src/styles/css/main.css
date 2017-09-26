@@ -25,7 +25,7 @@
   background-color: whitesmoke;
   border: 2px solid black;
   border-radius: 7pt;
-  max-height: 65vh; }
+  max-height: 100vh; }
   .surveyFormBackGround .buttons {
     margin-bottom: 5vh; }
 
@@ -77,16 +77,27 @@
 
 .emailTextArea1 {
   marginBottom: 5px; }
+  .emailTextArea1:focus {
+    background-color: white; }
 
 .emailTextArea2 {
   marginBottom: 5px;
   border: 1px solid red; }
+  .emailTextArea2:focus {
+    background-color: white; }
 
 .yellowArrow {
   width: 1vw; }
 
+.surveyInputs1:focus {
+  background-color: white; }
+
+.surveyInputs2:focus {
+  background-color: white; }
+
 * {
-  font-family: 'Oswald', sans-serif; }
+  font-family: 'Oswald', sans-serif;
+  font-size: 105%; }
 
 .main {
   background-image: url("../../imgs/pexels-photo-325139.jpeg");

@@ -17,14 +17,6 @@ export const handleToken = token => async dispatch => {
     })
 }
 
-export const fetchAlbums = () => async dispatch => {
-    let res = await axios.get('/api/albums');
-    dispatch({
-        type: types.FETCH_ALBUMS,
-        payload: res.data
-    })
-}
-
 export const submitSurvey = (values, history) => async dispatch => {
     let res = await axios.post('/api/surveys', values);
     history.push('/surveys');

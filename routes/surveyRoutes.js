@@ -7,7 +7,7 @@ const mongoose = require('mongoose'),
 
 module.exports = app => {
 
-    app.get('/api/survey/thanks', (req, res) => {
+    app.get('/api/surveys/thanks', (req, res) => {
         res.send('Thanks for voting!');
     })
 
@@ -36,6 +36,7 @@ module.exports = app => {
     })
 
     app.post('/api/surveys/webhooks', (req, res) => {
-
+        console.log(req.body);
+        res.send({});
     })
 }

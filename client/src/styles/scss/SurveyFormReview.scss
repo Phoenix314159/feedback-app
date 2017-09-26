@@ -1,6 +1,7 @@
 $border: 2px solid black;
 $radius: 7pt;
 $bottom: 5px;
+$color: white;
 
 .formReview {
   margin-top: 50px;
@@ -32,11 +33,28 @@ $bottom: 5px;
 }
 .emailTextArea1 {
   marginBottom: $bottom;
+  &:focus {
+    background-color: $color;
+  }
 }
 .emailTextArea2 {
   marginBottom: $bottom;
   border: 1px solid red;
+  &:focus {
+    background-color: $color;
+  }
 }
 .yellowArrow {
   width: 1vw;
+}
+.surveyInputs1 {
+  &:focus {
+    background-color: $color;
+  }
+
+}
+.surveyInputs2 {
+  &:focus {
+    background-color: $color;
+  }
 }

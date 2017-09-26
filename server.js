@@ -12,7 +12,6 @@ require('./middleware/middleware')(app);
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
-require('./routes/getAlbums')(app);
 
 //<---------- production ----------->
 if (process.env.NODE_ENV === 'production') {
