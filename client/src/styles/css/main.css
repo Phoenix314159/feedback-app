@@ -82,6 +82,9 @@
   marginBottom: 5px;
   border: 1px solid red; }
 
+.yellowArrow {
+  width: 1vw; }
+
 * {
   font-family: 'Oswald', sans-serif; }
 

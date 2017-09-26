@@ -24,3 +24,11 @@ export const fetchAlbums = () => async dispatch => {
         payload: res.data
     })
 }
+
+export const submitSurvey = values => async dispatch => {
+    let res = await axios.post('/api/surveys', values);
+    dispatch({
+        type: types.FETCH_USER,
+        payload: res.data
+    })
+}
