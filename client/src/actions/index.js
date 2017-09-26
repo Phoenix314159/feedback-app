@@ -25,8 +25,9 @@ export const fetchAlbums = () => async dispatch => {
     })
 }
 
-export const submitSurvey = values => async dispatch => {
+export const submitSurvey = (values, history) => async dispatch => {
     let res = await axios.post('/api/surveys', values);
+    history.push('/surveys');
     dispatch({
         type: types.FETCH_USER,
         payload: res.data
