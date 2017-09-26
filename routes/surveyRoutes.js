@@ -3,7 +3,10 @@ const mongoose = require('mongoose'),
     requireCredits = require('../middleware/requireCredits'),
     Survey = mongoose.model('surveys'),
     Mailer = require('../services/Mailer'),
-    surveyTemplate = require('../services/emailTemplates/surveyTemplate');
+    surveyTemplate = require('../services/emailTemplates/surveyTemplate'),
+    _ = require('lodash'),
+    Path = require('path-parser'),
+    {URL} = require('url');
 
 module.exports = app => {
 
@@ -36,7 +39,19 @@ module.exports = app => {
     })
 
     app.post('/api/surveys/webhooks', (req, res) => {
-        console.log(req.body);
+        const p = new Path('/api/surveys/:surveyId/:choice'),
+            events = _.chain(req.body)
+                .map(({email, url}) => {
+                    const match = p.test(new URL(url).pathname);
+                    if (match) {
+                        return {email, surveyId: match.surveyId, choice: match.choice};
+                    }
+                })
+                .compact()
+                .uniqBy('email', 'surveyId')
+                .value();
+
         res.send({});
     })
+
 }
