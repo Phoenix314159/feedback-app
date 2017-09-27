@@ -113,3 +113,8 @@
 
 .whiteText {
   color: azure; }
+
+.frontPage {
+  position: relative;
+  top: 1.5vh;
+  right: 1.5vw; }
