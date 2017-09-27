@@ -4,14 +4,15 @@ const mongoose = require('mongoose'),
     Survey = mongoose.model('surveys'),
     Mailer = require('../services/Mailer'),
     surveyTemplate = require('../services/emailTemplates/surveyTemplate'),
+    thanksTemplate = require('../services/emailTemplates/thanks'),
     _ = require('lodash'),
     Path = require('path-parser'),
     {URL} = require('url');
 
 module.exports = app => {
 
-    app.get('/api/surveys/thanks', (req, res) => {
-        res.send('Thanks for voting!');
+    app.get('/api/surveys/:surveyId/:choice', (req, res) => {
+        res.send(thanksTemplate());
     })
 
     app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {

@@ -19,7 +19,6 @@ class SurveyForm extends Component {
         })
     }
     
-
     render() {
         return (
             <div className="surveyFormBackGround">

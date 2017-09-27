@@ -11,8 +11,6 @@ class SurveyNew extends Component {
         this.checkForCredits = this.checkForCredits.bind(this);
     }
 
-    
-    
     checkForCredits(){
         if(this.props.auth.credits === 0) {
             return alert('You need to add some credits please.')
@@ -35,10 +33,10 @@ class SurveyNew extends Component {
         )
     }
 }
+
 const mapStateToProps = ({auth}) => {
     return {auth}
 }
-
 
 export default connect(mapStateToProps, null)(reduxForm({
     form: 'surveyForm'
