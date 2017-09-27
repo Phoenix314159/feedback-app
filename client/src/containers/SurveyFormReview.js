@@ -45,7 +45,7 @@ const SurveyFormReview = ({onCancel, formValues, submitSurvey, history, auth}) =
 
 const mapStateToProps = state => {
     return {
-        formValues: state.form.surveyForm.values,
+            formValues: state.form.surveyForm.values,
         };
 }
 
