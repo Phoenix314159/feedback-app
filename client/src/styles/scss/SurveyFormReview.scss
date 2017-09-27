@@ -4,57 +4,63 @@ $bottom: 5px;
 $color: white;
 
 .formReview {
-  margin-top: 50px;
-  width: 25vw;
-  max-width: 55vw;
-  background-color: whitesmoke;
-  border: $border;
-  border-radius: $radius;
-  max-height: 100vh;
-  label {
-    font-size: 1.5em;
-  }
-  button {
-    margin-top: 5vh;
-    margin-bottom: 2vh;
-  }
-  hr {
-    border-width: 3px;
-    color: black;
-  }
-  .values {
-    font-size: 1.3em;
-    overflow-wrap: break-word;
-  }
+    margin-top: 50px;
+    width: 25vw;
+    max-width: 55vw;
+    background-color: snow;
+    border: $border;
+    border-radius: $radius;
+    max-height: 100vh;
+    label {
+        font-size: 1.5em;
+    }
+    button {
+        margin-top: 5vh;
+        margin-bottom: 2vh;
+    }
+    hr {
+        border-width: 3px;
+        color: black;
+    }
+    .values {
+        font-size: 1.3em;
+        overflow-wrap: break-word;
+    }
 }
+
 .flexButtons {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
+
 .emailTextArea1 {
-  marginBottom: $bottom;
-  &:focus {
-    background-color: $color;
-  }
+    marginBottom: $bottom;
+    &:focus {
+        background-color: $color;
+    }
 }
+
 .emailTextArea2 {
-  marginBottom: $bottom;
-  border: 1px solid red;
-  &:focus {
-    background-color: $color;
-  }
+    marginBottom: $bottom;
+    border: 1px solid red;
+    &:focus {
+        background-color: $color;
+    }
 }
+
 .yellowArrow {
-  width: 1vw;
+    width: 1vw;
 }
+
 .surveyInputs1 {
-  &:focus {
-    background-color: $color;
-  }
+    &:focus {
+        background-color: $color;
+    }
 
 }
+
 .surveyInputs2 {
-  &:focus {
-    background-color: $color;
-  }
+    &:focus {
+        background-color: $color;
+    }
 }

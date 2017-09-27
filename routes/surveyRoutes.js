@@ -30,7 +30,7 @@ module.exports = app => {
             await mailer.send();
             await survey.save();
             req.user.credits -= 1;
-            const user = await req.user.save();
+     const user = await req.user.save();
             res.status(200).send(user);
         }
         catch (err) {
@@ -39,8 +39,8 @@ module.exports = app => {
     })
 
     app.post('/api/surveys/webhooks', (req, res) => {
-        const p = new Path('/api/surveys/:surveyId/:choice'),
-            events = _.chain(req.body)
+        const p = new Path('/api/surveys/:surveyId/:choice');
+               _.chain(req.body)
                 .map(({email, url}) => {
                     const match = p.test(new URL(url).pathname);
                     if (match) {
@@ -49,8 +49,21 @@ module.exports = app => {
                 })
                 .compact()
                 .uniqBy('email', 'surveyId')
+                .each(({surveyId, email, choice}) => {
+                    Survey.updateOne({
+                        _id: surveyId,
+                        recipients: {
+                        $elemMatch: {email: email, responded:false}
+                    }
+                    }, 
+                    {
+                        $inc: {[choice]: 1},
+                        $set: {'recipients.$.responded': true}
+                    }
+                  ).exec();
+                })
                 .value();
-
+        
         res.send({});
     })
 
