@@ -1,12 +1,11 @@
 import {types} from '../actions/types';
 
-export default (state = null, action) => {
+export default (state = [], action) => {
 
     switch (action.type) {
-        case types.FETCH_USER:
+        case types.FETCH_SURVEYS:
             return action.payload || false;
         default:
             return state;
     }
 }
-
