@@ -18,6 +18,7 @@ class SurveyForm extends Component {
 
         })
     }
+    
 
     render() {
         return (
@@ -50,8 +51,9 @@ const validate = values => {
     return errors;
 }
 
-export default reduxForm({
+
+export default (reduxForm({
     validate,
     form: 'surveyForm',
     destroyOnUnmount: false
-})(SurveyForm);
+})(SurveyForm));

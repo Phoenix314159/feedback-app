@@ -19,12 +19,6 @@ const SurveyFormReview = ({onCancel, formValues, submitSurvey, history, auth}) =
         )
     })
     
-    const checkForCredits = () => {
-        if(auth.credits === 0) {
-            return alert('You need to add some credits please.')
-        }
-        submitSurvey(formValues, history);
-    }
     return (
         <div className="container formReview">
             <h3 className="text-center">Please Confirm Your Entries</h3>
@@ -39,7 +33,7 @@ const SurveyFormReview = ({onCancel, formValues, submitSurvey, history, auth}) =
                     Back
                 </button>
                 <button
-                    onClick={checkForCredits}
+                    onClick={() => submitSurvey(formValues, history)}
                     className="green btn-flat right white-text">
                     Send Survey
                     <i className="material-icons right">email</i>
@@ -52,8 +46,7 @@ const SurveyFormReview = ({onCancel, formValues, submitSurvey, history, auth}) =
 const mapStateToProps = state => {
     return {
         formValues: state.form.surveyForm.values,
-        auth: state.auth
-    };
+        };
 }
 
 export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));
