@@ -10,6 +10,11 @@ const mongoose = require('mongoose'),
     {URL} = require('url');
 
 module.exports = app => {
+    
+    app.get('/api/surveys', requireLogin, async (req, res) => {
+        const surveys = await Survey.find({_user: req.user.id}).select({recipients: false});
+        res.status(200).send(surveys);
+    })
 
     app.get('/api/surveys/:surveyId/:choice', (req, res) => {
         res.send(thanksTemplate());
